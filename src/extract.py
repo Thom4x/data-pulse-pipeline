@@ -1,7 +1,9 @@
 import requests
 from typing import List, Dict, Optional
 
-def fetch_crypto_data(coin_id: str = 'bitcoin') -> Optional[Dict]:
+DEFAULT_COIN = "bitcoin"
+
+def fetch_crypto_data(coin_id: str = DEFAULT_COIN) -> Optional[Dict]:
     """
     Extraccion de datos de mercado para una criptomoneda específica desde la API de CoinGecko.
     """
@@ -21,7 +23,7 @@ def fetch_crypto_data(coin_id: str = 'bitcoin') -> Optional[Dict]:
 
 if __name__ == "__main__":
     # Prueba 
-    data = fetch_crypto_data('bitcoin')
+    data = fetch_crypto_data(DEFAULT_COIN)
     if data:
         print(f"Conexion exitosa, Moneda: {data['name']}")
         print(f"Precio actual: ${data['market_data']['current_price']['usd']}")
