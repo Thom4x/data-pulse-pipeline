@@ -6,11 +6,14 @@ def transform_market_data(raw_data: Dict) -> Optional[pd.DataFrame]:
     try:
         data_dict = {
             'coin_name': [raw_data.get('name')],
-            'symbol': [raw_data.get('symbol')],
-            'price': [raw_data['market_data']['current_price']['usd']],
-            'updated': [raw_data['market_data']['last_updated']]
+            'current_price_usd': [raw_data['market_data']['current_price']['usd']],
+            'market_cap_usd': [raw_data['market_data']['market_cap']['usd']],
+            'last_updated': [raw_data['market_data']['last_updated']],
+            'symbol': [raw_data.get('symbol', '').upper()],
         }
-        return pd.DataFrame(data_dict)
+        df = pd.DataFrame(data_dict)
+        df['current_price_usd'] = df['current_price_usd'].round(2)
+        return df
     except Exception as e:
         print(f"Error: {e}")
         return None
