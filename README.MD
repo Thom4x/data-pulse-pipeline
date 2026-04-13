@@ -9,10 +9,14 @@ Este es un proyecto de **Data Engineering** que implementa un pipeline ETL (Extr
 * **Base de Datos:** SQLite (Persistencia local).
 * **Entorno:** Docker (Opcional) / Venv.
 
-### 🏗️ Arquitectura del Proyecto
-El sistema se divide en tres capas principales para asegurar la escalabilidad:
-1. **Extraction:** Consumo de datos crudos desde API REST.
-2. **Transformation:** Limpieza, tipado y manejo de nulos con Pandas.
-3. **Loading:** Persistencia en base de datos mediante SQLAlchemy.
+## 📋 Estructura del Proyecto
+* `src/extract.py`: Consumo de API con manejo de headers y seguridad.
+* `src/transform.py`: Limpieza, tipado de datos (datetime) y normalización con Pandas.
+* `src/load.py`: Carga eficiente en base de datos relacional.
+* `main.py`: Orquestador del flujo completo.
 
+## 🚀 Cómo ejecutar
+1. Clonar el repositorio.
+2. Instalar dependencias: `pip install -r requirements.txt`
+3. Ejecutar: `python main.py`
 ---
