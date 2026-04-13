@@ -13,7 +13,7 @@ def fetch_crypto_data(coin_id: str = DEFAULT_COIN) -> Optional[Dict]:
         Optional[Dict]: Diccionario con datos de mercado o None si hay error
     """
 
-    url = f"https://api.coingecko.com/api/v3/coins/{coin_id}"
+    url = f"https://api.coingecko.com/api/v3/coins/{coin_id}" 
     
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
