@@ -26,4 +26,8 @@ def run_pipeline(coin_id="bitcoin"):
     print("--- Pipeline finalizado ---")
 
 if __name__ == "__main__":
-    run_pipeline("bitcoin")
+    # Procesar varias cripto
+    coins = ["bitcoin", "ethereum", "solana"]
+    
+    for coin in coins:
+        run_pipeline(coin)
