@@ -1,4 +1,4 @@
-# Data Pulse Pipeline 🚀
+# Cripto Data Pipeline 🚀
 
 ### Descripción
 Este es un proyecto de **Data Engineering** que implementa un pipeline ETL (Extract, Transform, Load) modular. El objetivo es capturar datos de una API pública, procesarlos mediante reglas de negocio y almacenarlos en una base de datos relacional para su posterior análisis.
